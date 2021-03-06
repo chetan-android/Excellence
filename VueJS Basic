@@ -1,0 +1,101 @@
+function Even() {
+        var arr = [1, 2, 3, 4, 5, 6];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 === 0) {
+                console.log(arr[i],);
+            }
+        }
+    }
+  Even();
+
+---------------------------------------
+
+var MaxConsecutiveOnes = (nums) => {
+    var currentMax = 0;
+    var Maxcount = 0;
+    for (var i=0; i<nums.length;i++) {
+	if(nums[i] ==1) {
+	  currentMax++;
+	  MaxCount= Math.max(currentMax,MaxCount);
+	} else{
+		currentMax = 0;
+		}
+	}
+	return MaxCount;
+}
+
+-----------------------------------
+
+function Duplicate(arr) {
+        var object = {};
+        var result = [];
+        arr.forEach(function (item) {
+          if(!object[item])
+            object[item] = 0;
+            object[item] += 1;
+        })
+        for (var prop in object) {
+           if(object[prop] >= 2) {
+               result.push(prop);
+      }}
+        return result;
+    }
+console.log(Duplicate([1,2,3,4,5,6,7,8,9,10,10,11,12,13]));
+
+-------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+</div>
+    <script>
+        const config = {'url': 'https://randomuser.me/api/?page=1&results=1' };
+
+        fetch(`${config.url}`).then((response) => {
+        return response.json()}).then((data) => {
+
+        const result = data.results.map(user => {		
+                return`
+                    <div class="card">
+                    <img src="${user.picture.large}" alt="Profile-Img" class="card__image"/>
+                    <h2 class="card__title">${user.name.first+' '+user.name.last}</h2>
+                    <button class="card__cta"><a href="tel:${user.phone}">Call</a></button>
+                    </div>`;
+                }).join(" ");
+                
+        document.querySelector(".container").insertAdjacentHTML("afterbegin", result);
+        
+        });
+    </script>
+</body>
+</html>
+
+-----------------------------------------------------------------
+
+var obj = [{
+	"id" : 4, 
+	"name" : "abc",
+},{
+	"id" : 10, 
+	"name" : "ab2",
+},{
+	"id" : 5, 
+	"name" : "abc3",
+},{
+	"id" : 6, 
+	"name" : "abc5"
+   }
+]
+
+obj.sort((a,b) => {
+	return a.id - b.id;
+})
+
+----------------------------------------
